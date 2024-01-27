@@ -24,7 +24,7 @@ const rename = require("gulp-rename"); //ファイル名変更
 const srcPath = {
   css: "../src/sass/**/*.scss",
   js: "../src/js/**/*",
-  img: "../src/renewal/**/*",
+  img: "../src/images/**/*",
   html: ["../src/**/*.html", "!./node_modules/**"],
 };
 
@@ -170,7 +170,7 @@ const jsBabel = () => {
 // ブラウザーシンク
 const browserSyncOption = {
   notify: false,
-  server: "../dist/support/category.html",
+  server: "../dist/",
 };
 const browserSyncFunc = () => {
   browserSync.init(browserSyncOption);

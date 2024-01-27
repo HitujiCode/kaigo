@@ -1,0 +1,44 @@
+@use "global" as *;
+
+.category-lists {
+  display: grid;
+  gap: rem(30);
+}
+
+.category-lists__list {
+}
+
+.category-lists__term {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+}
+
+.category-lists__icon {
+  width: fit-content;
+}
+
+.category-lists__icon img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.category-lists__term-title {
+  font-size: rem(18);
+  font-weight: $medium;
+  line-height: 1;
+  color: $green;
+  @include mq("md") {
+    font-size: rem(16);
+  }
+}
+
+.category-lists__items {
+  margin-top: rem(10);
+  display: grid;
+  gap: rem(10);
+  @include mq("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

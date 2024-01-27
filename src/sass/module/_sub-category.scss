@@ -93,49 +93,6 @@
   margin-top: rem(40);
 }
 
-.sub-category__lists {
-  display: grid;
-  gap: rem(30);
-}
-
-.sub-category__list {
-}
-
-.sub-category__term {
-  display: flex;
-  align-items: center;
-  gap: rem(8);
-}
-
-.sub-category__icon {
-  width: fit-content;
-}
-
-.sub-category__icon img {
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.sub-category__term-title {
-  font-size: rem(18);
-  font-weight: $medium;
-  line-height: 1;
-  color: $green;
-  @include mq("md") {
-    font-size: rem(16);
-  }
-}
-
-.sub-category__items {
-  margin-top: rem(10);
-  display: grid;
-  gap: rem(10);
-  @include mq("md") {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .sub-category__link {
   margin-top: rem(10);
 }
