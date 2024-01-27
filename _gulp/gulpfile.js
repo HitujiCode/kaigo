@@ -170,7 +170,7 @@ const jsBabel = () => {
 // ブラウザーシンク
 const browserSyncOption = {
   notify: false,
-  server: "../dist/",
+  server: "../dist/support/category.html",
 };
 const browserSyncFunc = () => {
   browserSync.init(browserSyncOption);

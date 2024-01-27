@@ -99,55 +99,6 @@
   }
 }
 
-.sub-info__item {
-  background-color: $white;
-}
-
-.sub-info__link {
-  display: inline-block;
-  display: flex;
-  align-items: center;
-  padding: rem(14) rem(14) rem(14) rem(16);
-  gap: rem(8);
-  border: 2px solid $limegreen;
-  border-radius: rem(10);
-}
-
-.sub-info__link-icon {
-  width: rem(42);
-  display: grid;
-  justify-content: center;
-}
-
-.sub-info__link-icon img {
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.sub-info__item-title {
-  font-size: rem(16);
-  font-weight: $medium;
-  line-height: 1;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @include mq("md") {
-    font-size: rem(18);
-  }
-}
-
-.sub-info__item-title::after {
-  content: "";
-  display: inline-block;
-  width: rem(15);
-  height: rem(10);
-  background-image: url("../img/arrow-green.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
 
 .sub-info__sidebar {
   margin-top: rem(40);

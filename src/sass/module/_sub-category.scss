@@ -11,16 +11,28 @@
   }
 }
 
-.sub-category__wrapper {
+.sub-category__contents {
   @include mq("md") {
     display: flex;
     gap: rem(30);
   }
 }
 
+.sub-category__wrapper {
+  @include mq("md") {
+    flex: 1;
+  }
+}
+
 .sub-category__content {
   @include mq("md") {
     flex: 1;
+  }
+}
+
+.sub-category__content.inner {
+  @include mq("md") {
+    padding: 0;
   }
 }
 
@@ -42,12 +54,14 @@
   font-size: rem(16);
   font-weight: $medium;
   line-height: calc(22 / 16);
-  flex: 1;
+  // flex: 1;
+  width: calc(233 / 375 * 100%);
   position: relative;
   z-index: 1;
   @include mq("md") {
     font-size: rem(22);
     line-height: calc(30 / 22);
+    max-width: rem(472);
   }
 }
 
@@ -79,30 +93,22 @@
   margin-top: rem(40);
 }
 
-.sub-category__list {
+.sub-category__lists {
   display: grid;
   gap: rem(30);
 }
 
-.sub-category__items {
+.sub-category__list {
 }
 
 .sub-category__term {
-  font-size: rem(18);
-  font-weight: $medium;
-  line-height: calc(24 / 18);
-  color: $green;
   display: flex;
   align-items: center;
-  @include mq("md") {
-    font-size: rem(16);
-    line-height: calc(22 / 16);
-  }
+  gap: rem(8);
 }
 
 .sub-category__icon {
-  width: rem(35);
-  height: auto;
+  width: fit-content;
 }
 
 .sub-category__icon img {
@@ -111,10 +117,50 @@
   object-fit: contain;
 }
 
-.sub-category__item {
+.sub-category__term-title {
+  font-size: rem(18);
+  font-weight: $medium;
+  line-height: 1;
+  color: $green;
+  @include mq("md") {
+    font-size: rem(16);
+  }
+}
+
+.sub-category__items {
+  margin-top: rem(10);
+  display: grid;
+  gap: rem(10);
+  @include mq("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .sub-category__link {
+  margin-top: rem(10);
+}
+
+.sub-category__link a {
+  display: inline-block;
+  position: relative;
+  padding-left: rem(16);
+  display: inline-flex;
+  align-items: center;
+  font-size: rem(15);
+  font-weight: $regular;
+  line-height: 1;
+}
+
+.sub-category__link a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: rem(8);
+  height: rem(6);
+  background-image: url("../img/arrow-black.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 }
 
 .sub-category__sidebar {
