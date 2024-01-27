@@ -1,0 +1,79 @@
+@use "global" as *;
+
+.more-button {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  background-image: linear-gradient(to bottom, $ornage1, $ornage2);
+  border-radius: rem(6);
+  padding: rem(10) rem(25) 0 rem(8);
+  @include mq("md") {
+    padding: rem(10) rem(16) 0 rem(12);
+    padding-left: min(1vw, 12px);
+    padding-right: min(1vw, 16px);
+    gap: rem(4);
+    align-items: end;
+  }
+}
+
+.more-button__img {
+  width: rem(66);
+  flex-shrink: 0;
+  @include mq("md") {
+    width: rem(68);
+  }
+}
+
+.more-button__img img {
+  aspect-ratio: 66/70;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 68/73;
+  }
+}
+
+.more-button__body {
+  display: flex;
+  align-items: center;
+  @include mq("md") {
+    flex-direction: column;
+    padding-bottom: rem(4);
+  }
+}
+
+.more-button__label {
+  text-align: center;
+  font-size: rem(16);
+  font-weight: $medium;
+  color: $white;
+  line-height: 1;
+  flex-shrink: 0;
+  border: 1px solid $white;
+  border-radius: rem(2);
+  padding: rem(12) rem(7);
+  @include mq("md") {
+    font-size: rem(14);
+    padding-top: rem(2);
+    padding-bottom: rem(2);
+    width: 100%;
+  }
+}
+
+.more-button__text {
+  font-size: rem(20);
+  font-weight: $medium;
+  color: $white;
+  line-height: calc(24 / 20);
+  letter-spacing: 0.03em;
+  @include mq("md") {
+    font-size: rem(17);
+    line-height: calc(20 / 17);
+  }
+}
+
+.more-button--pink {
+  @extend .more-button;
+  background-image: linear-gradient(to bottom, $pink1, $pink2);
+}
