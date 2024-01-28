@@ -1,8 +1,5 @@
 @use "global" as *;
 
-.detail {
-}
-
 .detail__inner.inner {
   display: contents;
   @include mq("md") {
@@ -131,6 +128,30 @@ blockquote {
   height: rem(20);
 }
 
+.detail__body h4 {
+  margin-top: rem(20);
+  font-size: rem(18);
+  font-weight: $bold;
+  color: $limegreen;
+  line-height: calc(26 / 18);
+  @include mq("md") {
+    margin-top: rem(30);
+    font-size: rem(20);
+    line-height: calc(26 / 20);
+  }
+}
+
+.detail__body h5 {
+  margin-top: rem(20);
+  margin-bottom: 0;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  @include mq("md") {
+    margin-top: rem(30);
+  }
+}
+
 .detail__link {
   margin-top: rem(10);
 }
@@ -167,30 +188,7 @@ blockquote {
   margin-inline: auto;
   @include mq("md") {
     padding: 0;
-  }
-}
-
-.detail__body h4 {
-  margin-top: rem(20);
-  font-size: rem(18);
-  font-weight: $bold;
-  color: $limegreen;
-  line-height: calc(26 / 18);
-  @include mq("md") {
-    margin-top: rem(30);
-    font-size: rem(20);
-    line-height: calc(26 / 20);
-  }
-}
-
-.detail__body h5 {
-  margin-top: rem(20);
-  margin-bottom: 0;
-  font-size: rem(16);
-  font-weight: $bold;
-  line-height: calc(24 / 16);
-  @include mq("md") {
-    margin-top: rem(30);
+    margin-inline: 0;
   }
 }
 
