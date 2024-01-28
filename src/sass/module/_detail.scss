@@ -131,143 +131,6 @@ blockquote {
   height: rem(20);
 }
 
-.detail__date {
-  margin-top: rem(24);
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.detail__date,
-.detail__date tbody,
-.detail__date th,
-.detail__date td {
-  border: 1px solid $gray;
-  font-size: rem(16);
-  font-weight: $regular;
-  color: $black;
-  line-height: calc(24 / 16);
-  text-align: center;
-}
-
-.detail__date th,
-.detail__date td {
-  padding: rem(2) rem(10);
-  @include mq("md") {
-    width: calc(100% / 3);
-  }
-}
-
-.detail__date tr:first-child th {
-  background-color: $beige;
-}
-
-.detail__date th:nth-child(1),
-.detail__date th:nth-child(2) {
-  width: calc(113 / 355 * 100%);
-}
-
-.detail__date--2colmun,
-.detail__date--3colmun,
-.detail__date--4colmun-1,
-.detail__date--4colmun-2,
-.detail__date--4colmun-3 {
-  @extend .detail__date;
-}
-
-.detail__date--4colmun-1 {
-  margin-top: rem(10);
-}
-
-.detail__date--2colmun th:nth-child(1) {
-  width: calc(243 / 355 * 100%);
-  padding: rem(2) rem(24);
-  @include mq("md") {
-    width: 50%;
-  }
-}
-
-.detail__date--2colmun th:nth-child(2) {
-  width: calc(112 / 355 * 100%);
-  @include mq("md") {
-    width: 50%;
-  }
-}
-
-.detail__date--3colmun th:nth-child(1) {
-  @include mq("md") {
-    width: 47%;
-  }
-}
-
-.detail__date--3colmun th,
-.detail__date--3colmun td {
-  @include mq("md") {
-    width: 26.5%;
-  }
-}
-
-.detail__date--3colmun th:nth-child(2),
-.detail__date--3colmun th:nth-child(3) {
-  @include mq("md") {
-    width: 26.5%;
-  }
-}
-
-.detail__date--4colmun-1 th:nth-child(1),
-.detail__date--4colmun-1 th:nth-child(2),
-.detail__date--4colmun-1 th:nth-child(3),
-.detail__date--4colmun-1 th:nth-child(4) {
-  width: calc(100% / 4);
-}
-
-.detail__date--4colmun-1 th,
-.detail__date--4colmun-1 td {
-  width: calc(100% / 4);
-  @include mq("md") {
-    width: calc(100% / 4);
-  }
-}
-
-.detail__date--4colmun-2 th:nth-child(1) {
-  width: calc(118 / 355 * 100%);
-}
-
-.detail__date--4colmun-2 th:nth-child(2),
-.detail__date--4colmun-2 th:nth-child(3),
-.detail__date--4colmun-2 th:nth-child(4) {
-  width: calc(237 / 355 * 100% / 3);
-}
-
-.detail__date--4colmun-2 th:nth-child(1),
-.detail__date--4colmun-2 th:nth-child(2),
-.detail__date--4colmun-2 th:nth-child(3),
-.detail__date--4colmun-2 th:nth-child(4) {
-  width: calc(100% / 4);
-}
-
-.detail__date--4colmun-3 th:nth-child(1) {
-  width: calc(118 / 355 * 100%);
-  @include mq("md") {
-    width: calc(260 / 690 * 100%);
-  }
-}
-
-.detail__date--4colmun-3 th:nth-child(2),
-.detail__date--4colmun-3 th:nth-child(3),
-.detail__date--4colmun-3 th:nth-child(4) {
-  width: calc(237 / 355 * 100% / 3);
-  @include mq("md") {
-    width: 20.77%;
-  }
-}
-
-// .detail__date--4colmun-3 th:nth-child(1),
-// .detail__date--4colmun-3 th:nth-child(2),
-// .detail__date--4colmun-3 th:nth-child(3),
-// .detail__date--4colmun-3 th:nth-child(4) {
-//   width: calc(100% / 4);
-// }
-
 .detail__link {
   margin-top: rem(10);
 }
@@ -476,7 +339,7 @@ blockquote {
   color: $black;
   line-height: calc(24 / 16);
   text-align: center;
-  padding: 0 rem(8);
+  padding: rem(2) rem(8);
 }
 
 %detail__date-head {
@@ -518,7 +381,7 @@ blockquote {
 
 .detail__date7 th {
   @extend %detail__date-common;
-  padding: 0 rem(20);
+  padding: rem(2) rem(20);
 }
 
 .detail__date7 td {
@@ -609,3 +472,16 @@ blockquote {
     width: calc(144 / 690 * 100%);
   }
 }
+
+// 非表示
+
+// .detail__date3 tbody:nth-of-type(2) th {
+//   background-color: $white;
+// }
+// .detail__date3 tbody:nth-of-type(2) {
+//   display: none;
+// }
+
+// .detail__date3.is-open tbody:nth-of-type(2) {
+//   display: table-row-group;
+// }
