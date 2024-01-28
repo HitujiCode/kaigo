@@ -11,11 +11,12 @@
 .category-lists__term {
   display: flex;
   align-items: center;
-  gap: rem(8);
 }
 
 .category-lists__icon {
-  width: fit-content;
+  width: rem(37);
+  display: flex;
+  justify-content: center;
 }
 
 .category-lists__icon img {
@@ -30,8 +31,11 @@
   line-height: 1;
   color: $green;
   @include mq("md") {
-    font-size: rem(16);
   }
+}
+
+.category-lists__term-title:nth-of-type(2) {
+  margin-left: rem(8);
 }
 
 .category-lists__items {
@@ -40,5 +44,12 @@
   gap: rem(10);
   @include mq("md") {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(20);
+    row-gap: rem(10);
   }
+}
+
+.category-lists__term--gap {
+  @extend .category-lists__term;
+  gap: rem(8);
 }

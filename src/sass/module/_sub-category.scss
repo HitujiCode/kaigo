@@ -54,14 +54,13 @@
   font-size: rem(16);
   font-weight: $medium;
   line-height: calc(22 / 16);
-  // flex: 1;
   width: calc(233 / 375 * 100%);
   position: relative;
   z-index: 1;
   @include mq("md") {
     font-size: rem(22);
     line-height: calc(30 / 22);
-    max-width: rem(472);
+    max-width: calc(472 / 660 * 100%);
   }
 }
 
@@ -91,6 +90,9 @@
 
 .sub-category__body {
   margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(35);
+  }
 }
 
 .sub-category__link {
@@ -100,20 +102,23 @@
 .sub-category__link a {
   display: inline-block;
   position: relative;
-  padding-left: rem(16);
+  padding-left: rem(14);
   display: inline-flex;
   align-items: center;
   font-size: rem(15);
   font-weight: $regular;
   line-height: 1;
+  @include mq("md") {
+    font-size: rem(14);
+  }
 }
 
 .sub-category__link a::before {
   content: "";
   position: absolute;
   left: 0;
-  width: rem(8);
-  height: rem(6);
+  width: rem(6);
+  height: rem(8);
   background-image: url("../img/arrow-black.svg");
   background-repeat: no-repeat;
   background-position: center center;

@@ -2,4 +2,7 @@
 
 .layout-sub-info {
   padding-bottom: rem(80);
+  @include mq("md") {
+    padding-top: rem(60);
+  }
 }

@@ -1,18 +1,22 @@
 @use "global" as *;
 
 .info-item {
-  display: inline-block;
   display: flex;
   align-items: center;
-  padding: rem(14) rem(14) rem(14) rem(16);
+  padding: rem(13) rem(14) rem(13) rem(16);
   gap: rem(8);
   background-color: $white;
   border: 2px solid $limegreen;
   border-radius: rem(10);
+  @include mq("md") {
+    padding: rem(17) rem(10) rem(17) rem(16);
+    gap: rem(12);
+  }
 }
 
 .info-item__icon {
   width: rem(42);
+  height: auto;
   display: grid;
   justify-content: center;
 }
@@ -39,10 +43,35 @@
 .info-item__title::after {
   content: "";
   display: inline-block;
-  width: rem(15);
-  height: rem(10);
+  top: 1px;
+  width: rem(10);
+  height: rem(15);
   background-image: url("../img/arrow-green.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+.info-item--noicon {
+  @extend .info-item;
+  padding: rem(16) rem(14) rem(16) rem(12);
+  display: block;
+  @include mq("md") {
+    padding: rem(21) rem(12);
+    font-feature-settings: "palt";
+  }
+}
+
+.info-item--noicon .info-item__title {
+  position: relative;
+  padding-right: rem(12);
+  @include mq("md") {
+  }
+}
+
+.info-item--noicon .info-item__title::after {
+  content: "";
+  position: absolute;
+  top: 23%;
+  right: 0;
 }
