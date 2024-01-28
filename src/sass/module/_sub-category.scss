@@ -60,7 +60,7 @@
   @include mq("md") {
     font-size: rem(22);
     line-height: calc(30 / 22);
-    max-width: calc(472 / 660 * 100%);
+    width: calc(472 / 700 * 100%);
   }
 }
 
