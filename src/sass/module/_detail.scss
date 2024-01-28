@@ -11,16 +11,26 @@
 }
 
 .detail__contents {
+  padding-bottom: rem(50);
   @include mq("md") {
     display: flex;
     gap: rem(30);
+    padding-bottom: 0;
   }
 }
 
 .detail__wrapper {
+  @include mq("md") {
+    flex: 1;
+  }
 }
 
 .detail__content {
+  background-color: $white;
+  padding-bottom: rem(40);
+  @include mq("md") {
+    padding: rem(36) rem(25) rem(134);
+  }
 }
 
 .detail__content h2 {
@@ -30,11 +40,20 @@
   line-height: calc(21 / 18);
   letter-spacing: 0.03em;
   background-color: $limegreen;
-  padding: rem(8) rem(10);
+  padding: rem(10);
+  @include mq("md") {
+    padding: rem(14) rem(12);
+    font-size: rem(20);
+    line-height: calc(26 / 20);
+    font-feature-settings: "palt";
+  }
 }
 
 .detail__body.inner {
   margin-top: rem(10);
+  @include mq("md") {
+    padding: 0;
+  }
 }
 
 .detail__datetime {
@@ -42,6 +61,10 @@
   font-weight: $medium;
   color: $brown;
   text-align: right;
+  padding: 0 rem(6);
+  @include mq("md") {
+    padding: 0;
+  }
 }
 
 .detail__thumbnail {
@@ -59,10 +82,14 @@
   margin-top: rem(10);
   font-size: rem(16);
   line-height: calc(24 / 16);
+  text-align: justify;
+  @include mq("md") {
+    margin-top: rem(10);
+  }
 }
 
 .detail__body p + p {
-  margin-top: rem(20);
+  margin-top: rem(24);
 }
 
 blockquote {
@@ -73,70 +100,6 @@ blockquote {
   margin-top: rem(40);
 }
 
-.toc {
-  border: 1px solid $black;
-  padding: rem(16) rem(14);
-}
-
-.toc__head {
-  background-color: $beige;
-  padding: rem(10) rem(8);
-  font-size: rem(20);
-  font-weight: $medium;
-  color: $green;
-}
-
-.toc__main-list {
-  list-style: auto;
-  padding-left: rem(20);
-  font-size: rem(16);
-  font-weight: $regular;
-  line-height: calc(30 / 16);
-}
-
-.toc__main-list > li > a {
-  display: block;
-  padding-right: rem(10);
-  position: relative;
-}
-
-.toc__main-list > li > a::before {
-  content: "";
-  display: inline-block;
-  width: rem(10);
-  height: rem(7);
-  background-image: url("../img/arrow-green.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  position: absolute;
-  top: rem(10);
-  right: 0;
-}
-
-.toc__main-list > li::marker {
-  color: $limegreen;
-}
-
-.toc__sub-list > li > a {
-  padding-left: rem(17);
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.toc__sub-list > li > a::before {
-  content: "";
-  background-image: url("../img/icon-triangle.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  position: absolute;
-  left: 0;
-  width: rem(11);
-  height: rem(8);
-}
-
 .detail__body h3 {
   margin-top: rem(40);
   font-size: rem(18);
@@ -145,6 +108,10 @@ blockquote {
   line-height: calc(24 / 18);
   background-color: $beige;
   padding: rem(8) rem(10);
+  @include mq("md") {
+    font-size: rem(20);
+    line-height: calc(28 / 20);
+  }
 }
 
 .detail__body h3 span {
@@ -165,19 +132,9 @@ blockquote {
 }
 
 .detail__date {
-  margin-top: rem(20);
+  margin-top: rem(24);
   border-collapse: collapse;
   width: 100%;
-}
-
-.detail__date--delta {
-  @extend .detail__date;
-  margin-top: rem(10);
-}
-
-.detail__date--2colmun,
-.detail__date--4colmun {
-  @extend .detail__date;
 }
 
 .detail__date,
@@ -192,6 +149,14 @@ blockquote {
   text-align: center;
 }
 
+.detail__date th,
+.detail__date td {
+  padding: rem(2) rem(10);
+  @include mq("md") {
+    width: calc(100% / 3);
+  }
+}
+
 .detail__date tr:first-child th {
   background-color: $beige;
 }
@@ -201,27 +166,110 @@ blockquote {
   width: calc(113 / 355 * 100%);
 }
 
-.detail__date--2colmun th:nth-child(1) {
-  width: calc(243 / 355 * 100%);
+.detail__date--2colmun,
+.detail__date--3colmun,
+.detail__date--4colmun-1,
+.detail__date--4colmun-2,
+.detail__date--4colmun-3 {
+  @extend .detail__date;
 }
 
-.detail__date--4colmun th:nth-child(1) {
-  width: calc(118 / 355 * 100%);
-}
-
-.detail__date--4colmun th:nth-child(2),
-.detail__date--4colmun th:nth-child(3),
-.detail__date--4colmun th:nth-child(4) {
-  width: calc(237 / 355 * 100% / 3);
-}
-
-.detail__link {
+.detail__date--4colmun-1 {
   margin-top: rem(10);
 }
 
-.detail__link--delta {
-  @extend .detail__link;
-  padding-bottom: rem(20);
+.detail__date--2colmun th:nth-child(1) {
+  width: calc(243 / 355 * 100%);
+  padding: rem(2) rem(24);
+  @include mq("md") {
+    width: 50%;
+  }
+}
+
+.detail__date--2colmun th:nth-child(2) {
+  width: calc(112 / 355 * 100%);
+  @include mq("md") {
+    width: 50%;
+  }
+}
+
+.detail__date--3colmun th:nth-child(1) {
+  @include mq("md") {
+    width: 47%;
+  }
+}
+
+.detail__date--3colmun th,
+.detail__date--3colmun td {
+  @include mq("md") {
+    width: 26.5%;
+  }
+}
+
+.detail__date--3colmun th:nth-child(2),
+.detail__date--3colmun th:nth-child(3) {
+  @include mq("md") {
+    width: 26.5%;
+  }
+}
+
+.detail__date--4colmun-1 th:nth-child(1),
+.detail__date--4colmun-1 th:nth-child(2),
+.detail__date--4colmun-1 th:nth-child(3),
+.detail__date--4colmun-1 th:nth-child(4) {
+  width: calc(100% / 4);
+}
+
+.detail__date--4colmun-1 th,
+.detail__date--4colmun-1 td {
+  width: calc(100% / 4);
+  @include mq("md") {
+    width: calc(100% / 4);
+  }
+}
+
+.detail__date--4colmun-2 th:nth-child(1) {
+  width: calc(118 / 355 * 100%);
+}
+
+.detail__date--4colmun-2 th:nth-child(2),
+.detail__date--4colmun-2 th:nth-child(3),
+.detail__date--4colmun-2 th:nth-child(4) {
+  width: calc(237 / 355 * 100% / 3);
+}
+
+.detail__date--4colmun-2 th:nth-child(1),
+.detail__date--4colmun-2 th:nth-child(2),
+.detail__date--4colmun-2 th:nth-child(3),
+.detail__date--4colmun-2 th:nth-child(4) {
+  width: calc(100% / 4);
+}
+
+.detail__date--4colmun-3 th:nth-child(1) {
+  width: calc(118 / 355 * 100%);
+  @include mq("md") {
+    width: calc(260 / 690 * 100%);
+  }
+}
+
+.detail__date--4colmun-3 th:nth-child(2),
+.detail__date--4colmun-3 th:nth-child(3),
+.detail__date--4colmun-3 th:nth-child(4) {
+  width: calc(237 / 355 * 100% / 3);
+  @include mq("md") {
+    width: 20.77%;
+  }
+}
+
+// .detail__date--4colmun-3 th:nth-child(1),
+// .detail__date--4colmun-3 th:nth-child(2),
+// .detail__date--4colmun-3 th:nth-child(3),
+// .detail__date--4colmun-3 th:nth-child(4) {
+//   width: calc(100% / 4);
+// }
+
+.detail__link {
+  margin-top: rem(10);
 }
 
 .detail__link a {
@@ -230,6 +278,33 @@ blockquote {
   font-weight: $regular;
   color: $gray2;
   line-height: calc(20 / 14);
+  @include mq("md") {
+    text-indent: rem(-50);
+    padding-left: rem(50);
+  }
+}
+
+.detail__link span {
+  text-decoration: underline;
+}
+
+.detail__link--delta {
+  @extend .detail__link;
+  padding-bottom: rem(20);
+}
+
+.detail__toplink {
+  margin-top: rem(10);
+  font-weight: $regular;
+  color: $gray2;
+  line-height: calc(20 / 14);
+  padding: 0 rem(10);
+  max-width: rem(600);
+  width: 100%;
+  margin-inline: auto;
+  @include mq("md") {
+    padding: 0;
+  }
 }
 
 .detail__body h4 {
@@ -238,6 +313,11 @@ blockquote {
   font-weight: $bold;
   color: $limegreen;
   line-height: calc(26 / 18);
+  @include mq("md") {
+    margin-top: rem(30);
+    font-size: rem(20);
+    line-height: calc(26 / 20);
+  }
 }
 
 .detail__body h5 {
@@ -246,6 +326,9 @@ blockquote {
   font-size: rem(16);
   font-weight: $bold;
   line-height: calc(24 / 16);
+  @include mq("md") {
+    margin-top: rem(30);
+  }
 }
 
 .detail__img {
@@ -257,6 +340,9 @@ blockquote {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 691/345;
+  }
 }
 
 .detail__img--delta {
@@ -271,14 +357,16 @@ blockquote {
 .detail__date-button button {
   display: block;
   width: 100%;
-  // max-width: rem(355);
-  padding: rem(16);
+  padding: rem(15);
   background-color: $limegreen;
   font-size: rem(16);
   font-weight: $regular;
   color: $white;
   line-height: calc(24 / 16);
   text-align: center;
+  @include mq("md") {
+    padding: rem(8);
+  }
 }
 
 .detail__date-button button span {
@@ -305,6 +393,9 @@ blockquote {
 .detail__button {
   margin-top: rem(40);
   text-align: center;
+  @include mq("md") {
+    margin-top: rem(60);
+  }
 }
 
 .detail__button a {
@@ -312,7 +403,7 @@ blockquote {
   justify-content: center;
   width: 100%;
   max-width: rem(291);
-  padding: rem(16);
+  padding: rem(10);
   border-radius: rem(8);
   background-image: linear-gradient(to bottom, $ornage1, $ornage2);
   font-size: rem(16);
@@ -320,11 +411,15 @@ blockquote {
   color: $white;
   line-height: calc(20 / 16);
   text-align: left;
+  @include mq("md") {
+    max-width: rem(360);
+    padding: rem(20);
+  }
 }
 
 .detail__button a span {
   display: inline-block;
-  padding-right: rem(32);
+  padding-right: rem(44);
   position: relative;
 }
 
@@ -345,9 +440,172 @@ blockquote {
 
 .detail__list-block {
   margin-top: rem(40);
-  padding: rem(30) 0;
-  background-color: $beige;
+  @include mq("md") {
+    padding: rem(30) 0;
+    background-color: $white;
+  }
 }
 
 .detail__list-block-inner.inner {
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.detail__sidebar {
+  margin-top: rem(20);
+  padding: 0 rem(10);
+  @include mq("md") {
+    margin-top: 0;
+    padding: 0;
+    width: calc(230 / 1000 * 100%);
+  }
+}
+
+// table-date
+
+%detail__date {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+%detail__date-common {
+  border: 1px solid $gray;
+  font-size: rem(16);
+  font-weight: $regular;
+  color: $black;
+  line-height: calc(24 / 16);
+  text-align: center;
+  padding: 0 rem(8);
+}
+
+%detail__date-head {
+  background-color: $beige;
+}
+
+.detail__date1,
+.detail__date2,
+.detail__date6,
+.detail__date7,
+.detail__date8 {
+  @extend %detail__date;
+  margin-top: rem(24);
+}
+
+.detail__date3,
+.detail__date4,
+.detail__date5 {
+  @extend %detail__date;
+  margin-top: rem(10);
+}
+
+.detail__date1 th,
+.detail__date1 td,
+.detail__date2 th,
+.detail__date2 td,
+.detail__date3 th,
+.detail__date3 td,
+.detail__date4 th,
+.detail__date4 td,
+.detail__date5 th,
+.detail__date5 td,
+.detail__date6 th,
+.detail__date6 td,
+.detail__date8 th,
+.detail__date8 td {
+  @extend %detail__date-common;
+}
+
+.detail__date7 th {
+  @extend %detail__date-common;
+  padding: 0 rem(20);
+}
+
+.detail__date7 td {
+  @extend %detail__date-common;
+}
+
+.detail__date1 tr:first-child th,
+.detail__date2 tr:first-child th,
+.detail__date3 tr:first-child th,
+.detail__date4 tr:first-child th,
+.detail__date5 tr:first-child th,
+.detail__date6 tr:first-child th,
+.detail__date7 tr:first-child th,
+.detail__date8 tr:first-child th {
+  @extend %detail__date-head;
+}
+
+.detail__date1 th:nth-child(1),
+.detail__date1 td:nth-child(1),
+.detail__date1 th:nth-child(2),
+.detail__date1 td:nth-child(2),
+.detail__date2 th:nth-child(1),
+.detail__date2 td:nth-child(1),
+.detail__date2 th:nth-child(2),
+.detail__date2 td:nth-child(2) {
+  width: calc(113 / 355 * 100%);
+  @include mq("md") {
+    width: calc(100% / 3);
+  }
+}
+
+.detail__date3 th:nth-child(2),
+.detail__date3 td:nth-child(2),
+.detail__date3 th:nth-child(3),
+.detail__date3 td:nth-child(3),
+.detail__date3 th:nth-child(4),
+.detail__date3 td:nth-child(4),
+.detail__date4 th:nth-child(2),
+.detail__date4 td:nth-child(2),
+.detail__date4 th:nth-child(3),
+.detail__date4 td:nth-child(3),
+.detail__date4 th:nth-child(4),
+.detail__date4 td:nth-child(4),
+.detail__date5 th:nth-child(2),
+.detail__date5 td:nth-child(2),
+.detail__date5 th:nth-child(3),
+.detail__date5 td:nth-child(3),
+.detail__date5 th:nth-child(4),
+.detail__date5 td:nth-child(4) {
+  width: calc(88 / 355 * 100%);
+  @include mq("md") {
+    width: calc(170 / 690 * 100%);
+  }
+}
+
+.detail__date6 th:nth-child(1),
+.detail__date6 td:nth-child(1) {
+  width: calc(113 / 355 * 100%);
+  @include mq("md") {
+    width: calc(330 / 690 * 100%);
+  }
+}
+
+.detail__date6 th:nth-child(2),
+.detail__date6 td:nth-child(2) {
+  width: calc(113 / 355 * 100%);
+  @include mq("md") {
+    width: calc(182 / 690 * 100%);
+  }
+}
+
+.detail__date7 th:nth-child(1),
+.detail__date7 td:nth-child(1) {
+  width: calc(243 / 355 * 100%);
+  @include mq("md") {
+    width: 50%;
+  }
+}
+
+.detail__date8 th:nth-child(2),
+.detail__date8 td:nth-child(2),
+.detail__date8 th:nth-child(3),
+.detail__date8 td:nth-child(3),
+.detail__date8 th:nth-child(4),
+.detail__date8 td:nth-child(4) {
+  width: calc(80 / 355 * 100%);
+  @include mq("md") {
+    width: calc(144 / 690 * 100%);
+  }
 }

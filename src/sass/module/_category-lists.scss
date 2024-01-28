@@ -17,6 +17,9 @@
   width: rem(37);
   display: flex;
   justify-content: center;
+  @include mq("md") {
+    width: rem(35);
+  }
 }
 
 .category-lists__icon img {
@@ -34,10 +37,6 @@
   }
 }
 
-.category-lists__term-title:nth-of-type(2) {
-  margin-left: rem(8);
-}
-
 .category-lists__items {
   margin-top: rem(10);
   display: grid;
@@ -52,4 +51,14 @@
 .category-lists__term--gap {
   @extend .category-lists__term;
   gap: rem(8);
+}
+
+.category-lists--delta {
+  @extend .category-lists;
+}
+
+.category-lists--delta .category-lists__items {
+  @include mq("md") {
+    column-gap: rem(10);
+  }
 }

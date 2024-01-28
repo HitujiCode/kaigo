@@ -99,32 +99,6 @@
   margin-top: rem(10);
 }
 
-.sub-category__link a {
-  display: inline-block;
-  position: relative;
-  padding-left: rem(14);
-  display: inline-flex;
-  align-items: center;
-  font-size: rem(15);
-  font-weight: $regular;
-  line-height: 1;
-  @include mq("md") {
-    font-size: rem(14);
-  }
-}
-
-.sub-category__link a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: rem(6);
-  height: rem(8);
-  background-image: url("../img/arrow-black.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-}
-
 .sub-category__sidebar {
   margin-top: rem(40);
   padding: rem(10);

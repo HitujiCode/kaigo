@@ -1,0 +1,90 @@
+@use "global" as *;
+
+.toc {
+  border: 1px solid $black;
+  padding: rem(16) rem(14);
+}
+
+.toc__head {
+  background-color: $beige;
+  padding: rem(5) rem(8);
+  font-size: rem(20);
+  font-weight: $medium;
+  color: $green;
+  @include mq("md") {
+    padding: rem(4) rem(15);
+    font-size: rem(16);
+  }
+}
+
+.toc__main-list {
+  list-style: auto;
+  margin-top: rem(6);
+  padding-left: rem(18);
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(30 / 16);
+  @include mq("md") {
+    padding-left: rem(22);
+  }
+}
+
+.toc__main-list > li + li {
+  margin-top: rem(3);
+}
+
+.toc__main-list > li > a {
+  display: block;
+  padding-right: rem(10);
+  position: relative;
+  line-height: calc(24 / 16);
+  width: fit-content;
+  @include mq("md") {
+    padding-right: rem(15);
+    text-indent: 0.2em;
+  }
+}
+
+.toc__main-list > li > a::before {
+  content: "";
+  display: inline-block;
+  width: rem(7);
+  height: rem(10);
+  background-image: url("../img/arrow-green2.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  position: absolute;
+  top: rem(10);
+  right: 0;
+  @include mq("md") {
+    top: rem(7);
+  }
+}
+
+.toc__main-list > li::marker {
+  color: $limegreen;
+}
+
+.toc__sub-list {
+  margin-top: rem(3);
+}
+
+.toc__sub-list > li > a {
+  padding-left: rem(15);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toc__sub-list > li > a::before {
+  content: "";
+  background-image: url("../img/icon-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  width: rem(8);
+  height: rem(11);
+}

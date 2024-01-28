@@ -1,4 +1,8 @@
 @use "global" as *;
 
 .layout-detail {
+  background-color: $beige;
+  @include mq("md") {
+    padding-bottom: rem(134);
+  }
 }

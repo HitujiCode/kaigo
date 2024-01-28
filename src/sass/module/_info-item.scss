@@ -55,23 +55,23 @@
 .info-item--noicon {
   @extend .info-item;
   padding: rem(16) rem(14) rem(16) rem(12);
-  display: block;
   @include mq("md") {
     padding: rem(21) rem(12);
-    font-feature-settings: "palt";
   }
 }
 
 .info-item--noicon .info-item__title {
   position: relative;
-  padding-right: rem(12);
+  padding-right: rem(17);
   @include mq("md") {
+    font-size: rem(16);
   }
 }
 
 .info-item--noicon .info-item__title::after {
   content: "";
   position: absolute;
-  top: 23%;
+  top: 50%;
   right: 0;
+  transform: translateY(-50%);
 }
